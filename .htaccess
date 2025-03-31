@@ -1,0 +1,11 @@
+RewriteEngine On
+Options -Indexes
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^www.example.com$
+RewriteRule .? https://www.example.com%{REQUEST_URI} [R=301,L]
+
+ErrorDocument 404 /404.html
+
+RewriteRule ^$ /index.html [L,QSA]
+RewriteRule ^ochrana-osobnich-udaju$ /ochrana-osobnich-udaju.html [L,QSA]

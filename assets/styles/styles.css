@@ -1,0 +1,387 @@
+@font-face {
+	font-family: "NotoSans";
+	src: url("../fonts/NotoSans.woff2") format("woff2 supports variations"),
+       url("../fonts/NotoSans.woff2") format("woff2-variations");
+	font-weight: 100 1000;
+	font-style: normal;
+}
+@font-face {
+	font-family: "NotoSans";
+	src: url("../fonts/NotoSans-Italic.woff2") format("woff2 supports variations"),
+		url("../fonts/NotoSans-Italic.woff2") format("woff2-variations");
+	font-weight: 100 1000;
+	font-style: italic;
+}
+@font-face {
+	font-family: "FacultyGlyphic";
+	src: url("../fonts/FacultyGlyphic.woff2") format("woff2 supports variations"),
+		url("../fonts/FacultyGlyphic.woff2") format("woff2-variations");
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+
+/* Website settings */
+/* Unit size: 8px */
+html {
+	scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, p {
+	margin-top: 32px;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+	margin-top: 48px;
+	font-family: 'FacultyGlyphic', 'Times New Roman', Times, serif;
+}
+
+h1 {
+	font-size: 30pt;
+	font-weight: 500;
+}
+
+h2 {
+	font-size: 26pt;
+	font-weight: 500;
+}
+
+h3 {
+	font-size: 20pt;
+	font-weight: 500;
+	margin-top: 72px;
+}
+
+h4 {
+	font-size: 14pt;
+	font-weight: 500;
+}
+
+p, li {
+	font-size: 14pt;
+	font-weight: 400;
+}
+
+b, strong {
+	font-weight: 500;
+}
+
+i, em {
+	font-style: italic;
+}
+
+a, a:hover, a:visited {
+	color: #316191;
+}
+
+ul, ol {
+	margin-left: 16px;
+}
+.list-none {
+	list-style: none;
+}
+li {
+	margin-top: 16px;
+}
+
+.center {
+	text-align: center;
+}
+
+.center-margin {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.no-underline {
+	text-decoration: none !important;
+}
+
+.tiny {
+	font-size: 10pt;
+}
+
+.gray {
+	color: #2d2c2c !important;
+}
+
+.hero {
+	font-style: italic;
+	font-size: 18pt;
+	margin-top: 64px;
+}
+
+body {
+	font-family: 'NotoSans', Tahoma, Verdana, sans-serif;
+	margin: 0 32px 32px 32px;
+}
+
+.background-overlay {
+
+	/* Change color for website background (in RGBA, the gradient should contain the same color twice). */
+	/* Adapted from Chris Coyier, https://css-tricks.com/tinted-images-multiple-backgrounds/. */
+	background: linear-gradient(RGBA(255, 174, 45, 0.2), RGBA(255, 174, 45, 0.2)), url('../images/background.png');
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: repeat;
+	z-index: -1;
+}
+
+.row {
+	display: flex;
+}
+
+.block {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 86px;
+	margin-bottom: 24px;
+	padding: 32px 128px 64px;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+
+.block:not(.no-texture) {
+	background-image: url('../images/block.png');
+	background-size: 70% 100%;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.block.no-texture {
+
+	/* Change color of block background without texture. */
+	background-color: RGBA(200, 204, 204, 0.5);
+	border-radius: 8px;
+
+	margin: 64px 128px;
+
+}
+
+.block:not(.no-texture)::after {
+
+	/* Change color of block background. */
+	background-color: rgb(247, 251, 255);
+
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	mask-size: 70% 100%;
+	mask-repeat: no-repeat;
+	mask-position: center top;
+	mix-blend-mode: multiply;
+	pointer-events: none;
+	mask-image: url('../images/block.png');
+}
+
+.block .container {
+	position: relative;
+	z-index: 1;
+	max-width: 60%;
+	padding: 64px 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu {
+	margin: 0;
+	top: -16px;
+}
+#menu nav {
+	position: absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 8px;
+}
+#menu ul {
+	display: inline-flex;
+	list-style: none;
+}
+#menu li {
+	padding: 16px 0;
+	margin: 8px 32px;
+}
+#menu a {
+	text-decoration: none;
+	color: #000000;
+	font-weight: 500;
+}
+
+img.portrait {
+	max-width: 75%;
+	margin: 32px 0;
+	border-radius: 8px;
+}
+
+.vzdelani-block p {
+	margin-top: 8px;
+	font-size: 12pt;
+}
+
+.vzdelani-column {
+	padding: 0 16px;
+}
+
+.vzdelani-item {
+	margin-top: 16px;
+}
+
+.vzdelani-item p {
+	margin-top: 0;
+}
+
+.obratit-column {
+	flex-grow: 1;
+}
+
+.obratit-column ul {
+	margin: 0 32px;
+}
+
+.contact-block {
+	margin: 16px 0;
+}
+
+.contact-block p {
+	margin-top: 8px;
+}
+
+@media (min-width:1000px) {
+
+	.w-lg-25 {
+		max-width: 25%;
+	}
+	.w-lg-50 {
+		max-width: 50%;
+	}
+	.w-lg-75 {
+		max-width: 75%;
+	}
+	.w-lg-100 {
+		max-width: 100%;
+	}
+
+}
+
+@media (max-width:1000px) {
+
+	body {
+		margin: 8px 0;
+	}
+
+	.container {
+		max-width: 95% !important;
+	}
+
+	.hero {
+		margin-top: 16px;
+		font-size: 14pt;
+	}
+
+	.block {
+		max-width: 100%;
+		background-size: 150% 100% !important;
+		padding: 32px 32px 64px;
+	}
+
+	.block.no-texture {
+		margin: 64px 16px;
+	}
+
+	.block::after {
+		mask-size: 150% 100% !important;
+	}
+
+	.block .container {
+		padding: 128px 0 !important;
+	}
+
+	.row {
+		display: inline-block;
+	}
+
+	img.portrait {
+		max-width: 100%;
+		margin: 32px 8px 8px;
+		border-radius: 8px;
+	}
+
+	.w-sm-25 {
+		max-width: 25%;
+	}
+	.w-sm-50 {
+		max-width: 50%;
+	}
+	.w-sm-75 {
+		max-width: 75%;
+	}
+	.w-sm-100 {
+		max-width: 100%;
+	}
+
+	h1 {
+		font-size: 26pt;
+	}
+
+	h2 {
+		font-size: 22pt;
+	}
+
+	h3 {
+		font-size: 16pt;
+	}
+
+	h4 {
+		font-size: 14pt;
+	}
+
+	p, li {
+		font-size: 12pt;
+	}
+
+	/* Hide menu on mobile/tablet, otherwise would have to implement collapsible version. */
+	#menu {
+		display: none;
+	}
+
+}
