@@ -311,10 +311,12 @@ img.portrait {
 	#cena-kontakt,
 	#o-mne {
 		background-image: none !important;
+		margin-top: -8rem !important;
 	}
-	/* #o-mne {
-		padding: 7rem 0 !important;
-	} */
+	#main .container,
+	#jak-pracuji .container {
+		margin-bottom: 3rem !important;
+	}
 	
 	body {
 		margin: 8px 0;
