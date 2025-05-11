@@ -305,19 +305,6 @@ img.portrait {
 
 @media (max-width:1000px) {
 
-	/* #o-mne {
-		padding: 7rem 0 !important;
-	} */
-	#cena-kontakt,
-	#o-mne {
-		background-image: none !important;
-		margin-top: -8rem !important;
-	}
-	#main .container,
-	#jak-pracuji .container {
-		margin-bottom: 3rem !important;
-	}
-	
 	body {
 		margin: 8px 0;
 	}
@@ -347,7 +334,7 @@ img.portrait {
 	}
 
 	.block .container {
-		padding: 2rem 0 !important;
+		padding: 5rem 0 !important;
 	}
 
 	.row {
@@ -356,7 +343,7 @@ img.portrait {
 
 	img.portrait {
 		max-width: 100%;
-		margin: 2rem 8px 8px;
+		margin: 32px 8px 8px;
 		border-radius: 8px;
 	}
 
